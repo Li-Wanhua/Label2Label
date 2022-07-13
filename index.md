@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to GitHub Pages Label2Label
 
 You can use the [editor on GitHub](https://github.com/Li-Wanhua/Label2Label/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
