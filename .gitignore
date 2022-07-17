@@ -1,0 +1,9 @@
+*.npy
+*.pth
+*.pyc
+*.out
+*.sh
+Face_Attribute/dataset/
+Face_Attribute/exps/
+Pedestrian_Attribute/data
+Pedestrian_Attribute/exp_result
