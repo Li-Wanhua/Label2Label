@@ -86,7 +86,6 @@
  <a href="https://arxiv.org/pdf/2207.08677.pdf" class="d-inline-block p-3 align-top"><img height="100" width="78" src="images/paper_thumb.png" style="border:1px solid" data-nothumb><br>Paper</a>
  <a href="https://arxiv.org/pdf/2207.08677.pdf" class="d-inline-block p-3 align-top"><img height="100" width="78"  src="images/paper_supp.png" style="border:1px solid" data-nothumb><br>Supplementary</a>
   <a href="https://github.com/Li-Wanhua/Label2Label" class="d-inline-block p-3 align-top"><img height="100" width="78" src="images/github.png" style="border:1px solid" data-nothumb><br>Github Code</a>
- <a href="https://www.youtube.com/watch?v=NCJZyvKZ8vc" class="d-inline-block p-3 align-top"><img height="100" width="78" src="images/Video.png" style="border:1px solid" data-nothumb><br>Video</a>
  </div>
 </div>
 
@@ -115,34 +114,49 @@ Objects are usually associated with multiple attributes, and these attributes of
 <h2>Motivation</h2><hr>
 
 <p align="center">
-    <img src="images/motivation.png" width="60%">
+    <img src="images/l2l-mot.png" width="60%">
 </p>
-<p>We consider the problem of age estimation and display age labels next to the images. Deterministic unordered embeddings represent each facial image as a point in the latent space without considering the data uncertainty and the ordinal property. By contrast, probabilistic ordinal embeddings learn a distribution following the ordinal constraint in the embedding space. We see that the highly blurred image exhibits high uncertainty and the ordinal relations are preserved with our probabilistic ordinal embeddings.</p>
+<p>For a given sample, many of its attributes are correlated. Modeling complex inter-attribute associations is an important
+challenge for multi-attribute learning. To address this challenge, most existing
+approaches adopt a multi-task learning framework, which formulates
+multi-attribute recognition as a multi-label classification task and simultaneously
+learns multiple binary classifiers. We propose a language modeling framework
+named Label2Label to model the complex instance-wise attribute relations.
+Specifically, we regard an attribute label as a "word", which describes the current
+state of the sample from a certain point of view. By treating multiple attribute labels as a “sentence”, we
+exploit the correlation between attributes with a language modeling framework.
+  </p>
 
 
 <h2>Overview</h2><hr>
 <p align="center">
-    <img src="images/overview.png" width="90%">
+    <img src="images/l2l-frame.png" width="90%">
 </p>
-<p>(A) The overall framework of our approach. Given an input image <i><b>x</b></i>, we first obtain the parameters <i><b>µ(x)</b></i> and  <i><b>Σ(x)</b></i>, which
-correspond to the mean and diagonal covariance of a multivariate Gaussian distribution respectively. Then we sample embeddings from
-this distribution with the reparameterization trick. Lastly, the sampled embeddings are sent to a popular regressor for prediction.</p>
-<p>(B) The
-idea of ordinal distribution constraint. For three samples with labels of 20, 30, and 50, we enforce the ordinal relations in the embedding
-space with the symmetrized Kullback-Leibler divergence or 2-Wasserstein distance. In the end, we expect that ordered probabilistic
-embeddings are obtained by applying the ordinal distribution constraint in the latent space.</p>
-
-<h2>Introduction Video</h2><hr>
-<p align="center">
-<iframe width="800" height="450" src="https://www.youtube.com/embed/NCJZyvKZ8vc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+Given an input image, we first obtain the image
+features with a feature extractor. Then the image features are input to the attribute
+query network to obtain the predicted label sequence.We randomly mask some "words"
+and generate the masked "sentence". We attain a sequence of token embeddings using
+a word embedding module. In the end, we recover the entire label "sentence" with a
+Transformer decoder module, which is conditioned on the token embeddings and image
+features. Although there are some wrong "words" in the pseudo labels, which are shown
+in orange, we can treat them as another form of masks.
 </p>
 
   
 
 <h2>Results</h2><hr>
 
-<p>Correlations between the uncertainty score and different performance metrics on two corrupted test sets. To quantity the correlation, we adopt the Kendall’s tau correlations. For the curves of three sub-figures, the results are 0.956, -0.733, and 0.778, respectively</p>
-<p align='center'><img src="images/corr.png" width="90%"></p>
+<p>
+  Visualization of attention scores among attributes in the self-attention layer.We
+show the attention of the first head at layer 1 with two samples. The positive attributes
+of each sample are listed in the corresponding bottom-left corner. For the first sample,
+that attribute "Male" is strongly related to the presence of "5 o’clock shadow" and the
+absence of "Wearing Lipstick" and "Wearing Necklace". For the second sample, the
+attribute "Heavy Makeup" assigns more attention to the existence of the attributes
+"Wearing Lipstick", "Wearing Necklace", "Attractive", and "Arched Eyebrows".
+  </p>
+<p align='center'><img src="images/l2l-result.png" width="90%"></p>
 
 
 
