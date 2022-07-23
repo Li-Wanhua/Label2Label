@@ -95,7 +95,21 @@
 
 
 <h2>Abstract</h2><hr>
-<p>Uncertainty is the only certainty there is. Modeling data uncertainty is essential for regression, especially in unconstrained settings. Traditionally the direct regression formulation is considered and the uncertainty is modeled by modifying the output space to a certain family of probabilistic distributions. On the other hand, classification based regression and ranking based solutions are more popular in practice while the direct regression methods suffer from the limited performance. How to model the uncertainty within the present-day technologies for regression remains an open issue. In this paper, we propose to learn probabilistic ordinal embeddings which represent each data as a multivariate Gaussian distribution rather than a deterministic point in the latent space. An ordinal distribution constraint is proposed to exploit the ordinal nature of regression. Our probabilistic ordinal embeddings can be integrated into popular regression approaches and empower them with the ability of uncertainty estimation. Experimental results show that our approach achieves competitive performance.</p>
+<p>
+Objects are usually associated with multiple attributes, and these attributes often exhibit high correlations. 
+  Modeling complex relationships between attributes poses a great challenge for multi-attribute learning. 
+  This paper proposes a simple yet generic framework named Label2Label to exploit the complex attribute correlations. 
+  Label2Label is the first attempt for multi-attribute prediction from the perspective of language modeling. 
+  Specifically, it treats each attribute label as a "word" describing the sample. 
+  As each sample is annotated with multiple attribute labels, these "words" will naturally form an unordered but meaningful "sentence", 
+  which depicts the semantic information of the corresponding sample. Inspired by the remarkable success of pre-training language models in NLP, 
+  Label2Label introduces an image-conditioned masked language model, 
+  which randomly masks some of the "word" tokens from the label "sentence" and aims to recover them based on the masked "sentence" and the context 
+  conveyed by image features. Our intuition is that the instance-wise attribute relations are well grasped if the neural net can infer the missing 
+  attributes based on the context and the remaining attribute hints. Label2Label is conceptually simple and empirically powerful. Without incorporating 
+  task-specific prior knowledge and highly specialized network designs, our approach achieves state-of-the-art results on three different multi-attribute
+  learning tasks, compared to highly customized domain-specific methods. Code is available at https://github.com/Li-Wanhua/Label2Label.
+</p>
 
 
 <h2>Motivation</h2><hr>
