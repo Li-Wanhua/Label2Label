@@ -1,4 +1,8 @@
 # Label2Label
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/label2label-a-language-modeling-framework-for/facial-attribute-classification-on-lfwa)](https://paperswithcode.com/sota/facial-attribute-classification-on-lfwa?p=label2label-a-language-modeling-framework-for)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/label2label-a-language-modeling-framework-for/pedestrian-attribute-recognition-on-pa-100k)](https://paperswithcode.com/sota/pedestrian-attribute-recognition-on-pa-100k?p=label2label-a-language-modeling-framework-for)
+
+
 
 Official implementation of our paper "Label2Label: A Language Modeling Framework for Multi-Attribute Learning"
 
