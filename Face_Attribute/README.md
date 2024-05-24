@@ -4,8 +4,8 @@
 
 - Data prepare
   [LFWA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
-  [train_lfwa.txt](https://cloud.tsinghua.edu.cn/f/1198187e505e4114b6c7/?dl=1)
-  [val_lfwa.txt](https://cloud.tsinghua.edu.cn/f/e5bde09e4ebe4ead8b89/?dl=1)
+  [train_lfwa.txt](https://pan.baidu.com/s/1ze2Vi48VY-fmSWiPKlBsaQ?pwd=hegy)
+  [val_lfwa.txt](https://pan.baidu.com/s/14Dr_E1BjuEzTq-8DwwFQtg?pwd=33w8)
   
   Prepare datasets to have following structure:
   
