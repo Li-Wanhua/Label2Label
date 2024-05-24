@@ -42,6 +42,6 @@
   |Backbone|Error|Log|Weight|
   |--|--|--|--|
   |Resnet50|12.51|[log_resnet50](https://pan.baidu.com/s/1BhQeQThDKRo5el1rsG8IBA?pwd=6ggb)|[model_resnet50](https://pan.baidu.com/s/1TGTsbIqpVyZh2lnRu90P0A?pwd=gvvm)|
-  |Resnet101|12.44|[log_resnet101](https://pan.baidu.com/s/1noEDYW5ClG-au5G6yhvnCg?pwd=77ni)|[model_resnet101](https://cloud.tsinghua.edu.cn/f/9fd0818f47a549d0861e/?dl=1)|
+  |Resnet101|12.44|[log_resnet101](https://pan.baidu.com/s/1noEDYW5ClG-au5G6yhvnCg?pwd=77ni)|[model_resnet101](https://pan.baidu.com/s/17cl3W9Sm6DtsNrXrrr_ZDw?pwd=uwvd)|
 
 &emsp;you may notice that we use a specific random seed number, you can also use another seed number by `--seed $NUM`, or you can set seed randomly by `--seed 0`. Our method can get similar performance with different random seed. Here we just fix the seed so that you can get the result exactly match one of our experiment log.
